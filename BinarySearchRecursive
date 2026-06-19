@@ -1,0 +1,27 @@
+
+public class BinarySearch {
+	
+ public static int binaryRecursive(int arr[],int low,int high,int target) {
+	 int mid=low+(high-low)/2;
+	 if(arr[mid]==target) {
+		 return mid;
+	 }
+	 else  if(arr[mid]>=target) {
+		 return binaryRecursive(arr,low,mid-1,target);
+	 }
+	 else {
+		 return binaryRecursive(arr,mid+1,high,target);
+	 }
+	 
+ }
+ public static void main(String[] args) {
+	  int[] arr= {8,12,34,56,77};
+	 
+	 System.out.println("running");
+	 int low=0;
+	 int high=arr.length-1;
+	 int target=12;
+	int result=BinarySearch.binaryRecursive(arr,low,high,target);
+	System.out.println(result);
+}
+}
